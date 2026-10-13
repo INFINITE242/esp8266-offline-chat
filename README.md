@@ -47,3 +47,113 @@ An offline communication system built using two ESP8266 boards that allows users
 
 **Chat Screen**
 ![Chat Screen](https://github.com/user-attachments/assets/40ed0c95-e68b-4fa4-80ff-8ae2f2ba70f8)
+
+
+
+
+---
+
+## 🔌 Circuit Diagram
+
+Each ESP8266 device is powered by a 3.7V lithium battery through an AMS1117 3.3V buck-boost converter.
+
+### Power Supply Connection (Per Device)
+
+```text
+   ┌─────────────────┐
+   │  3.7V Lithium   │
+   │    Battery      │
+   │   (+ )   (-)    │
+   └───┬─────────┬───┘
+       │         │
+   ┌───▼─────────▼───┐
+   │   AMS1117       │
+   │  Buck-Boost     │
+   │  IN+     IN-    │
+   │                 │
+   │  OUT+    OUT-   │
+   └───┬─────────┬───┘
+       │         │
+   ┌───▼─────────▼───┐
+   │   ESP8266       │
+   │   NodeMCU       │
+   │   3V3     GND   │
+   └─────────────────┘
+
+
+
+
+Wiring Table
+From	To	Voltage
+Battery (+)	AMS1117 IN+	3.7V
+Battery (-)	AMS1117 IN-	GND
+AMS1117 OUT+	ESP8266 3V3	3.3V
+AMS1117 OUT-	ESP8266 GND	GND
+⚠️ Important: Set the AMS1117 output to exactly 3.3V using a multimeter before connecting it to the ESP8266. Never connect 5V directly to the 3V3 pin.
+
+🚀 Setup Procedure
+Step 1: Hardware Assembly
+Connect the 3.7V lithium battery to the AMS1117 input (IN+ and IN-).
+
+Connect the AMS1117 output (OUT+ and OUT-) to the ESP8266 (3V3 and GND).
+
+Verify the AMS1117 output voltage is exactly 3.3V using a multimeter.
+
+Repeat the same steps for the second device.
+
+Step 2: Upload Code
+Connect the ESP8266 to your laptop via USB.
+
+Open Arduino IDE.
+
+Select board: NodeMCU 1.0 (ESP-12E Module).
+
+Select the correct COM port.
+
+Set AP_SSID = "TriTro A" for Device 1, then click Upload.
+
+Change to AP_SSID = "TriTro K" for Device 2, then click Upload.
+
+Step 3: Power On
+Disconnect the USB cable.
+
+Power both devices from their lithium batteries.
+
+Both devices will boot up and start their WiFi hotspots.
+
+Step 4: Connect Your Phone
+On your phone, open WiFi Settings.
+
+Connect to the hotspot:
+
+Phone 1 → TriTro A (Password: 12345678)
+
+Phone 2 → TriTro K (Password: 12345678)
+
+It will show "Connected, no internet" — this is normal.
+
+Step 5: Open The Chat App
+Open Chrome browser on your phone.
+
+Type in the address bar: 192.168.4.1
+
+The intro screen will appear.
+
+Tap NEXT → START.
+
+You're now in the chat!
+
+Step 6: Start Chatting
+Type a message in the input box.
+
+Tap the Send button (➤).
+
+The message will appear on the other device instantly.
+
+text
+
+### 💾 Step 3: Save It
+1. Scroll to the top right and click **"Commit changes..."**.
+2. Type a message like `Added circuit diagram and setup procedure`.
+3. Click the green **"Commit changes"** button.
+
