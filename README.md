@@ -152,8 +152,4 @@ The message will appear on the other device instantly.
 
 text
 
-### 💾 Step 3: Save It
-1. Scroll to the top right and click **"Commit changes..."**.
-2. Type a message like `Added circuit diagram and setup procedure`.
-3. Click the green **"Commit changes"** button.
-
+MEOWWWWWWWWWWW....
