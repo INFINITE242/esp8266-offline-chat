@@ -37,22 +37,6 @@ An offline communication system built using two ESP8266 boards that allows users
     *   **OR**
 *   USB Power Cables / Power Banks
 
-### 📸 Screenshots
-
-**Intro Screen**
-![Intro Screen](https://github.com/user-attachments/assets/3df2e30a-74e9-4f2e-a5af-f05e5266dcbd)
-
-**Connected**
-![Connected](https://github.com/user-attachments/assets/2af447bf-26c4-4629-81ce-752fa6a93382)
-
-**Chat Screen**
-![Chat Screen](https://github.com/user-attachments/assets/40ed0c95-e68b-4fa4-80ff-8ae2f2ba70f8)
-
-
-
-
----
-
 ## 🔌 Circuit Diagram
 
 Each ESP8266 device is powered by a 3.7V lithium battery through an AMS1117 3.3V buck-boost converter.
